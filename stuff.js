@@ -9,7 +9,7 @@ $( document ).ready(function() {
   
   for (var i=0; i < i4s.length; i++) {
     console.log(i);
-    i4s[i].init();
+    //i4s[i].init();
   }  
   
 });
@@ -21,6 +21,7 @@ var i4 = function(id){
   this.closedWidth = 10;
   this.numItems = 1;
   this.currentPos = 0;
+  this.init();
 };
 
 i4.prototype.init = function(){
@@ -44,7 +45,9 @@ i4.prototype.init = function(){
     $(this).css("right",(offset + thisWidth) + "%");
     $(this).attr("data-pos",i).attr("id",self.id + "-" + i);
     
-    $(this).children().css("width",(self.openWidth / 100) * $(sel).width());
+    var innerWidth = (self.openWidth / 100) * $(sel).width();
+    console.log("inner " + innerWidth);
+    $(this).children().css("width",innerWidth);
     offset += thisWidth;
     
     i++;
@@ -55,6 +58,10 @@ i4.prototype.init = function(){
   $(sel).children().click(function(){
     self.open($(this).data('pos'));
   });
+  
+  /*$(sel).children().mouseover(function(){
+    self.open($(this).data('pos'));
+  });*/
     
 };
 i4.prototype.open = function(pos){
