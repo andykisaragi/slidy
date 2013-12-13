@@ -6,33 +6,67 @@ body{
 #cont1{
   width: 500px;
   height: 200px;
-  top: 50px;
-  left: 50px;
-  position: absolute;
+  /*top: 50px;
+  left: 50px;*/
+  position: relative;
 } 
 #cont2{
   width: 400px;
   height: 100px;
-  top: 100px;
-  left: 600px;
-  position: absolute;
+  /*top: 100px;
+  left: 600px;*/
+  position: relative;
 } 
 
-.i4{
-   width: 100%;
+/* i1 */
+
+
+.i1{
+    width: 200px;
+    height: 100px;
+    overflow: hidden;
 }
 
-.i4 div.item{
+.i1 .main,
+.i1 .popup{
+    width: 100%;
+    height: 100%;
+}
+
+.i1 .main{
+    background: #eee;
+  margin-top:0;  
+ -webkit-transition: all 0.4s; 
+ -moz-transition: all 0.4s; 
+ -o-transition: all 0.4s;
+ transition: all 0.4s;
+}
+.i1 .popup{
+    background: #ccc;
+}
+.i1:hover .main{
+
+  margin-top: -50%;  
+
+}
+
+/* i4 */
+
+.i4{
+  width: 100%;
+}
+
+.i4 > div{
   width: 10%;
   min-height: 100%;
   float: left;
   position: absolute;
+  overflow: hidden;
 }
-.i4 div.item.closed{
+.i4 div.closed{
   cursor: pointer;
 }
-
-.i4 div.item.closed .content{
+.i4 div .content{
   display: none;
 }
 
